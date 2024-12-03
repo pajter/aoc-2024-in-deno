@@ -1,0 +1,17 @@
+{
+  "tasks": {
+    "dev": {
+      "description": "Run in watch mode",
+      "command": "deno run --allow-read --watch src/index.ts"
+    },
+    "run": {
+      "description": "Run",
+      "command": "deno run --allow-read src/index.ts"
+    }
+  },
+  "imports": {
+    "@std/cli": "jsr:@std/cli@^1.0.7",
+    "@std/fs": "jsr:@std/fs@^1.0.6",
+    "@std/path": "jsr:@std/path@^1.0.8"
+  }
+}
