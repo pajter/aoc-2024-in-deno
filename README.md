@@ -1,2 +1,3 @@
-# aoc-2024-in-deno
-Advent of Code
+# Advent of Code 2024
+
+https://adventofcode.com/
