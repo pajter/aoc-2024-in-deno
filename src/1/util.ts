@@ -1,5 +1,5 @@
 export const split = (
-  input: readonly (readonly [number, number])[],
+  input: [number, number][],
   sort = true,
 ) => {
   const left: number[] = [];
@@ -18,30 +18,11 @@ export const split = (
   return [left, right] as const;
 };
 
-export const join = (
-  [left, right]: [number[], number[]],
+export const zip = (
+  left: number[],
+  right: number[],
 ) => {
   return left.map((_, k) => {
-    return [left[k]!, right[k]!] as const;
+    return [left[k], right[k]] as [number, number];
   });
-};
-
-export const readInput = (test = false) => {
-  const pth = `${import.meta.dirname}/input${test ? ".test" : ""}.txt`;
-
-  return Deno.readTextFileSync(pth).split("\n")
-    .map((line) => {
-      line = line.trim();
-      if (!line) {
-        return;
-      }
-
-      const [left, right] = line.split(/\s+/).map((v): number =>
-        Number(v.trim())
-      );
-
-      return [left, right] as const;
-    }).filter((v) =>
-      typeof v !== "undefined"
-    ) as readonly (readonly [number, number])[];
 };

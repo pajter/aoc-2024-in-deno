@@ -1,8 +1,11 @@
-import { join, readInput, split } from "./util.ts";
+import { readInput } from "../util.ts";
+import { split, zip } from "./util.ts";
 
-const [left, right] = split(readInput());
+const input = readInput<[number, number][]>(import.meta.dirname);
 
-const sortedInput = join([left, right]);
+const [left, right] = split(input);
+
+const sortedInput = zip(left, right);
 
 const distances = sortedInput.map(([left, right]) => {
   return Math.abs(right - left);
