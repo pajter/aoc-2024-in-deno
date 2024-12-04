@@ -1,7 +1,6 @@
-import { input } from "./input.ts";
-import { join, split } from "./util.ts";
+import { join, readInput, split } from "./util.ts";
 
-const [left, right] = split(input);
+const [left, right] = split(readInput());
 
 const sortedInput = join([left, right]);
 
