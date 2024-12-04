@@ -1,9 +1,6 @@
 export const readInput = <T extends number[][]>(
-  dirname: string | undefined,
-  test = false,
+  pth: string,
 ) => {
-  const pth = `${dirname}/input${test ? ".test" : ""}.txt`;
-
   return Deno.readTextFileSync(pth).split("\n")
     .map((line) => {
       line = line.trim();

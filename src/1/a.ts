@@ -1,7 +1,7 @@
 import { readInput } from "../util.ts";
 import { split, zip } from "./util.ts";
 
-const input = readInput<[number, number][]>(import.meta.dirname);
+const input = readInput<[number, number][]>(`${import.meta.dirname}/input.txt`);
 
 const [left, right] = split(input);
 
